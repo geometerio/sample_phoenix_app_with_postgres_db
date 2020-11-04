@@ -1,4 +1,4 @@
-# SamplePhoenixAppWithPostgresDb
+# SamplePhoenixAppWithPostgresDB
 
 To start your Phoenix server:
 

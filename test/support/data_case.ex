@@ -1,4 +1,4 @@
-defmodule SamplePhoenixAppWithPostgresDb.DataCase do
+defmodule SamplePhoenixAppWithPostgresDB.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule SamplePhoenixAppWithPostgresDb.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use SamplePhoenixAppWithPostgresDb.DataCase, async: true`, although
+  by setting `use SamplePhoenixAppWithPostgresDB.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -18,20 +18,20 @@ defmodule SamplePhoenixAppWithPostgresDb.DataCase do
 
   using do
     quote do
-      alias SamplePhoenixAppWithPostgresDb.Repo
+      alias SamplePhoenixAppWithPostgresDB.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import SamplePhoenixAppWithPostgresDb.DataCase
+      import SamplePhoenixAppWithPostgresDB.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(SamplePhoenixAppWithPostgresDb.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(SamplePhoenixAppWithPostgresDB.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(SamplePhoenixAppWithPostgresDb.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(SamplePhoenixAppWithPostgresDB.Repo, {:shared, self()})
     end
 
     :ok

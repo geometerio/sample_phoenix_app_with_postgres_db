@@ -1,11 +1,11 @@
-defmodule SamplePhoenixAppWithPostgresDbWeb.Router do
-  use SamplePhoenixAppWithPostgresDbWeb, :router
+defmodule SamplePhoenixAppWithPostgresDBWeb.Router do
+  use SamplePhoenixAppWithPostgresDBWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {SamplePhoenixAppWithPostgresDbWeb.LayoutView, :root}
+    plug :put_root_layout, {SamplePhoenixAppWithPostgresDBWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -14,14 +14,14 @@ defmodule SamplePhoenixAppWithPostgresDbWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", SamplePhoenixAppWithPostgresDbWeb do
+  scope "/", SamplePhoenixAppWithPostgresDBWeb do
     pipe_through :browser
 
     live "/", PageLive, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", SamplePhoenixAppWithPostgresDbWeb do
+  # scope "/api", SamplePhoenixAppWithPostgresDBWeb do
   #   pipe_through :api
   # end
 
@@ -37,7 +37,7 @@ defmodule SamplePhoenixAppWithPostgresDbWeb.Router do
 
     scope "/" do
       pipe_through :browser
-      live_dashboard "/dashboard", metrics: SamplePhoenixAppWithPostgresDbWeb.Telemetry
+      live_dashboard "/dashboard", metrics: SamplePhoenixAppWithPostgresDBWeb.Telemetry
     end
   end
 end

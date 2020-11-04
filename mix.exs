@@ -1,4 +1,4 @@
-defmodule SamplePhoenixAppWithPostgresDb.MixProject do
+defmodule SamplePhoenixAppWithPostgresDB.MixProject do
   use Mix.Project
 
   def project do
@@ -19,7 +19,7 @@ defmodule SamplePhoenixAppWithPostgresDb.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {SamplePhoenixAppWithPostgresDb.Application, []},
+      mod: {SamplePhoenixAppWithPostgresDB.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

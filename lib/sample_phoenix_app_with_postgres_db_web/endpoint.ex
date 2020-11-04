@@ -1,4 +1,4 @@
-defmodule SamplePhoenixAppWithPostgresDbWeb.Endpoint do
+defmodule SamplePhoenixAppWithPostgresDBWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :sample_phoenix_app_with_postgres_db
 
   # The session will be stored in the cookie and signed,
@@ -10,7 +10,7 @@ defmodule SamplePhoenixAppWithPostgresDbWeb.Endpoint do
     signing_salt: "5jkaDpCW"
   ]
 
-  socket "/socket", SamplePhoenixAppWithPostgresDbWeb.UserSocket,
+  socket "/socket", SamplePhoenixAppWithPostgresDBWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -50,5 +50,5 @@ defmodule SamplePhoenixAppWithPostgresDbWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug SamplePhoenixAppWithPostgresDbWeb.Router
+  plug SamplePhoenixAppWithPostgresDBWeb.Router
 end

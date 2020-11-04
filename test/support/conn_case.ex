@@ -1,4 +1,4 @@
-defmodule SamplePhoenixAppWithPostgresDbWeb.ConnCase do
+defmodule SamplePhoenixAppWithPostgresDBWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule SamplePhoenixAppWithPostgresDbWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use SamplePhoenixAppWithPostgresDbWeb.ConnCase, async: true`, although
+  by setting `use SamplePhoenixAppWithPostgresDBWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -22,20 +22,20 @@ defmodule SamplePhoenixAppWithPostgresDbWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import SamplePhoenixAppWithPostgresDbWeb.ConnCase
+      import SamplePhoenixAppWithPostgresDBWeb.ConnCase
 
-      alias SamplePhoenixAppWithPostgresDbWeb.Router.Helpers, as: Routes
+      alias SamplePhoenixAppWithPostgresDBWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint SamplePhoenixAppWithPostgresDbWeb.Endpoint
+      @endpoint SamplePhoenixAppWithPostgresDBWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(SamplePhoenixAppWithPostgresDb.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(SamplePhoenixAppWithPostgresDB.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(SamplePhoenixAppWithPostgresDb.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(SamplePhoenixAppWithPostgresDB.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

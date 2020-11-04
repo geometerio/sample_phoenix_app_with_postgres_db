@@ -1,5 +1,5 @@
-defmodule SamplePhoenixAppWithPostgresDbWeb.ErrorView do
-  use SamplePhoenixAppWithPostgresDbWeb, :view
+defmodule SamplePhoenixAppWithPostgresDBWeb.ErrorView do
+  use SamplePhoenixAppWithPostgresDBWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

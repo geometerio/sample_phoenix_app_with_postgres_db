@@ -1,5 +1,5 @@
-defmodule SamplePhoenixAppWithPostgresDbWeb.PageLiveTest do
-  use SamplePhoenixAppWithPostgresDbWeb.ConnCase
+defmodule SamplePhoenixAppWithPostgresDBWeb.PageLiveTest do
+  use SamplePhoenixAppWithPostgresDBWeb.ConnCase
 
   import Phoenix.LiveViewTest
 

@@ -1,12 +1,12 @@
-defmodule SamplePhoenixAppWithPostgresDbWeb do
+defmodule SamplePhoenixAppWithPostgresDBWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use SamplePhoenixAppWithPostgresDbWeb, :controller
-      use SamplePhoenixAppWithPostgresDbWeb, :view
+      use SamplePhoenixAppWithPostgresDBWeb, :controller
+      use SamplePhoenixAppWithPostgresDBWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,11 +19,11 @@ defmodule SamplePhoenixAppWithPostgresDbWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: SamplePhoenixAppWithPostgresDbWeb
+      use Phoenix.Controller, namespace: SamplePhoenixAppWithPostgresDBWeb
 
       import Plug.Conn
-      import SamplePhoenixAppWithPostgresDbWeb.Gettext
-      alias SamplePhoenixAppWithPostgresDbWeb.Router.Helpers, as: Routes
+      import SamplePhoenixAppWithPostgresDBWeb.Gettext
+      alias SamplePhoenixAppWithPostgresDBWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -31,7 +31,7 @@ defmodule SamplePhoenixAppWithPostgresDbWeb do
     quote do
       use Phoenix.View,
         root: "lib/sample_phoenix_app_with_postgres_db_web/templates",
-        namespace: SamplePhoenixAppWithPostgresDbWeb
+        namespace: SamplePhoenixAppWithPostgresDBWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -45,7 +45,7 @@ defmodule SamplePhoenixAppWithPostgresDbWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {SamplePhoenixAppWithPostgresDbWeb.LayoutView, "live.html"}
+        layout: {SamplePhoenixAppWithPostgresDBWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -72,7 +72,7 @@ defmodule SamplePhoenixAppWithPostgresDbWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import SamplePhoenixAppWithPostgresDbWeb.Gettext
+      import SamplePhoenixAppWithPostgresDBWeb.Gettext
     end
   end
 
@@ -87,9 +87,9 @@ defmodule SamplePhoenixAppWithPostgresDbWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import SamplePhoenixAppWithPostgresDbWeb.ErrorHelpers
-      import SamplePhoenixAppWithPostgresDbWeb.Gettext
-      alias SamplePhoenixAppWithPostgresDbWeb.Router.Helpers, as: Routes
+      import SamplePhoenixAppWithPostgresDBWeb.ErrorHelpers
+      import SamplePhoenixAppWithPostgresDBWeb.Gettext
+      alias SamplePhoenixAppWithPostgresDBWeb.Router.Helpers, as: Routes
     end
   end
 

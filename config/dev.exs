@@ -1,7 +1,7 @@
 use Mix.Config
 
 # Configure your database
-config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDb.Repo,
+config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDB.Repo,
   username: "postgres",
   password: "postgres",
   database: "sample_phoenix_app_with_postgres_db_dev",
@@ -15,7 +15,7 @@ config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDb.Repo
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDbWeb.Endpoint,
+config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDBWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -55,7 +55,7 @@ config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDbWeb.E
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDbWeb.Endpoint,
+config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDBWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",

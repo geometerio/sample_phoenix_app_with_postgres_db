@@ -8,14 +8,14 @@
 use Mix.Config
 
 config :sample_phoenix_app_with_postgres_db,
-  ecto_repos: [SamplePhoenixAppWithPostgresDb.Repo]
+  ecto_repos: [SamplePhoenixAppWithPostgresDB.Repo]
 
 # Configures the endpoint
-config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDbWeb.Endpoint,
+config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDBWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "VwLiwxfkqeR7/n8Z7R/mH/grvN+NzuhHBFzIM7vQJNNa5cpKliIhLMKRsLq9oFG7",
-  render_errors: [view: SamplePhoenixAppWithPostgresDbWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: SamplePhoenixAppWithPostgresDb.PubSub,
+  render_errors: [view: SamplePhoenixAppWithPostgresDBWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: SamplePhoenixAppWithPostgresDB.PubSub,
   live_view: [signing_salt: "tILiyzBE"]
 
 # Configures Elixir's Logger

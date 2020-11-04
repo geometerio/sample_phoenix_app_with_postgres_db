@@ -1,14 +1,14 @@
-defmodule SamplePhoenixAppWithPostgresDbWeb.ErrorViewTest do
-  use SamplePhoenixAppWithPostgresDbWeb.ConnCase, async: true
+defmodule SamplePhoenixAppWithPostgresDBWeb.ErrorViewTest do
+  use SamplePhoenixAppWithPostgresDBWeb.ConnCase, async: true
 
   # Bring render/3 and render_to_string/3 for testing custom views
   import Phoenix.View
 
   test "renders 404.html" do
-    assert render_to_string(SamplePhoenixAppWithPostgresDbWeb.ErrorView, "404.html", []) == "Not Found"
+    assert render_to_string(SamplePhoenixAppWithPostgresDBWeb.ErrorView, "404.html", []) == "Not Found"
   end
 
   test "renders 500.html" do
-    assert render_to_string(SamplePhoenixAppWithPostgresDbWeb.ErrorView, "500.html", []) == "Internal Server Error"
+    assert render_to_string(SamplePhoenixAppWithPostgresDBWeb.ErrorView, "500.html", []) == "Internal Server Error"
   end
 end

@@ -1,3 +1,3 @@
-defmodule SamplePhoenixAppWithPostgresDbWeb.LayoutView do
-  use SamplePhoenixAppWithPostgresDbWeb, :view
+defmodule SamplePhoenixAppWithPostgresDBWeb.LayoutView do
+  use SamplePhoenixAppWithPostgresDBWeb, :view
 end

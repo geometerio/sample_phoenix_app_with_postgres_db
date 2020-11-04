@@ -1,6 +1,6 @@
-defmodule SamplePhoenixAppWithPostgresDb do
+defmodule SamplePhoenixAppWithPostgresDB do
   @moduledoc """
-  SamplePhoenixAppWithPostgresDb keeps the contexts that define your domain
+  SamplePhoenixAppWithPostgresDB keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

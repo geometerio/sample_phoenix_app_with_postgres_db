@@ -5,7 +5,7 @@ use Mix.Config
 # The MIX_TEST_PARTITION environment variable can be used
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
-config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDb.Repo,
+config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDB.Repo,
   username: "postgres",
   password: "postgres",
   database: "sample_phoenix_app_with_postgres_db_test#{System.get_env("MIX_TEST_PARTITION")}",
@@ -14,7 +14,7 @@ config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDb.Repo
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDbWeb.Endpoint,
+config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDBWeb.Endpoint,
   http: [port: 4002],
   server: false
 

@@ -1,5 +1,5 @@
-defmodule SamplePhoenixAppWithPostgresDbWeb.LayoutViewTest do
-  use SamplePhoenixAppWithPostgresDbWeb.ConnCase, async: true
+defmodule SamplePhoenixAppWithPostgresDBWeb.LayoutViewTest do
+  use SamplePhoenixAppWithPostgresDBWeb.ConnCase, async: true
 
   # When testing helpers, you may want to import Phoenix.HTML and
   # use functions such as safe_to_string() to convert the helper
