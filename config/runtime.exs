@@ -3,8 +3,11 @@ import Config
 if config_env() == :prod do
   listen_port = String.to_integer(System.get_env("PORT") || "4000")
 
+  # This evaluates to false only when "false", otherwise it's true
+  database_ssl = System.get_env("DATABASE_SSL") != "false"
+
   config :sample_phoenix_app_with_postgres_db, SamplePhoenixAppWithPostgresDB.Repo,
-    ssl: false,
+    ssl: database_ssl,
     url: System.fetch_env!("DATABASE_URL"),
     pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
 
