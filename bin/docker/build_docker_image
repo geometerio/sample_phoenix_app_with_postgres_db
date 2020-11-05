@@ -1,0 +1,8 @@
+#!/bin/bash
+
+docker build \
+  --build-arg ELIXIR_VERSION=${ELIXIR_VERSION} \
+  --build-arg ERLANG_VERSION=${ERLANG_VERSION} \
+  --build-arg ALPINE_VERSION=${ALPINE_VERSION} \
+  --build-arg APP_NAME=${APP_NAME} \
+  --tag ${DOCKER_IMAGE_NAME} .
