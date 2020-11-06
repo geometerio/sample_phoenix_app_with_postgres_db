@@ -36,6 +36,12 @@ RUN apk add --no-cache openssl ncurses-libs && \
 USER nobody:nobody
 COPY --from=builder --chown=nobody:nobody /app/_build/prod/rel/$APP_NAME ./
 ENV HOME=/app
-RUN ln -s /app/bin/$APP_NAME /app/bin/release
-CMD ["bin/start"]
-#CMD ["bin/release", "start"]
+
+RUN set -eux; \
+  if [ -e /app/bin/start ]; then \
+    ln -s /app/bin/start /app/bin/release; \
+  else \
+    ln -s /app/bin/$APP_NAME /app/bin/release; \
+  fi
+
+CMD ["bin/release", "start"]
