@@ -38,10 +38,8 @@ COPY --from=app_builder --chown=nobody:nobody /app/_build/prod/rel/$APP_NAME ./
 ENV HOME=/app
 
 RUN set -eux; \
-  if [ -e /app/bin/start ]; then \
-    ln -s /app/bin/start /app/bin/release; \
-  else \
-    ln -s /app/bin/$APP_NAME /app/bin/release; \
+  if [ ! -e /app/bin/start_script ]; then \
+    ln -s /app/bin/$APP_NAME /app/bin/start_script; \
   fi
 
-CMD ["bin/release", "start"]
+CMD ["bin/start_script", "start"]
