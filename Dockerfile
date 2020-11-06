@@ -1,8 +1,8 @@
 # Adapted from: https://hexdocs.pm/phoenix/releases.html#containers
-ARG DOCKER_BUILDER_ELIXIR_IMAGE
-ARG DOCKER_APP_RUNNER_IMAGE
+ARG APP_BUILDER_ELIXIR_DOCKER_IMAGE
+ARG APP_RUNNER_DOCKER_IMAGE
 
-FROM $DOCKER_BUILDER_ELIXIR_IMAGE AS builder
+FROM $APP_BUILDER_ELIXIR_DOCKER_IMAGE AS app_builder
 ENV MIX_ENV=prod
 WORKDIR /app
 
@@ -24,8 +24,8 @@ RUN mix do deps.get, deps.compile && \
   mix phx.digest && \
   mix do compile, release
 
-ARG DOCKER_APP_RUNNER_IMAGE
-FROM $DOCKER_APP_RUNNER_IMAGE AS app_runner
+ARG APP_RUNNER_DOCKER_IMAGE
+FROM $APP_RUNNER_DOCKER_IMAGE AS app_runner
 ARG APP_NAME
 EXPOSE 4000
 WORKDIR /app
@@ -34,7 +34,7 @@ RUN apk add --no-cache openssl ncurses-libs && \
   chown nobody:nobody /app
 
 USER nobody:nobody
-COPY --from=builder --chown=nobody:nobody /app/_build/prod/rel/$APP_NAME ./
+COPY --from=app_builder --chown=nobody:nobody /app/_build/prod/rel/$APP_NAME ./
 ENV HOME=/app
 
 RUN set -eux; \
