@@ -14,6 +14,7 @@ RUN apk add --no-cache build-base npm git python3 && \
 COPY mix.exs mix.lock ./
 COPY config config
 COPY lib lib
+COPY rel rel
 # see excluded files in .dockerignore:
 COPY priv priv
 COPY assets assets
@@ -36,4 +37,5 @@ USER nobody:nobody
 COPY --from=builder --chown=nobody:nobody /app/_build/prod/rel/$APP_NAME ./
 ENV HOME=/app
 RUN ln -s /app/bin/$APP_NAME /app/bin/release
-CMD ["bin/release", "start"]
+CMD ["bin/start"]
+#CMD ["bin/release", "start"]
