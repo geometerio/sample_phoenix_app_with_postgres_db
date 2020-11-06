@@ -1,9 +1,8 @@
 # Adapted from: https://hexdocs.pm/phoenix/releases.html#containers
-ARG ELIXIR_VERSION
-ARG ERLANG_VERSION
-ARG ALPINE_VERSION
+ARG DOCKER_BUILDER_ELIXIR_IMAGE
+ARG DOCKER_APP_RUNNER_IMAGE
 
-FROM hexpm/elixir:${ELIXIR_VERSION}-erlang-${ERLANG_VERSION}-alpine-${ALPINE_VERSION} AS builder
+FROM $DOCKER_BUILDER_ELIXIR_IMAGE AS builder
 ENV MIX_ENV=prod
 WORKDIR /app
 
@@ -15,7 +14,7 @@ COPY mix.exs mix.lock ./
 COPY config config
 COPY lib lib
 COPY rel rel
-# see excluded files in .dockerignore:
+# See excluded files in .dockerignore for priv and assets:
 COPY priv priv
 COPY assets assets
 
@@ -25,7 +24,8 @@ RUN mix do deps.get, deps.compile && \
   mix phx.digest && \
   mix do compile, release
 
-FROM alpine:${ALPINE_VERSION} AS runner
+ARG DOCKER_APP_RUNNER_IMAGE
+FROM $DOCKER_APP_RUNNER_IMAGE AS app_runner
 ARG APP_NAME
 EXPOSE 4000
 WORKDIR /app
