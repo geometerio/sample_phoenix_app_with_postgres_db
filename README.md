@@ -1,20 +1,6 @@
-# SamplePhoenixAppWithPostgresDB
+# Sample Phoenix App With Postgres DB
 
-To start your Phoenix server:
-
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
-
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+This is an example Phoenix app with a Postgres database, along with a Docker file and other required files for deployment
+on [Digital Ocean's App Platform](https://www.digitalocean.com/products/app-platform/).  See this 
+[repo](https://github.com/geometerio/elixir-phoenix-dockerfile-examples) which highlights the specific files which have 
+been edited or added.  Also see the steps there for deployment on Digital Ocean.
